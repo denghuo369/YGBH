@@ -1,4 +1,5 @@
 {
+  "spider": "./jar/0606.jar;md5;3A017244A8B8691E10152BBCA9C4DE6F",
   "sites": [
     {
       "key": "drpy_js_荐片",
@@ -33,12 +34,20 @@
   ],
   "lives": [
     {
+      "name": "live",
+      "url": "https://codeberg.org/ygbh8888/BH/raw/branch/main/ZB/ZB.txt",
+      "type": 0,
+      "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+    },
+    {
       "group": "redirect",
       "channels": [
         {
           "name": "redirect",
           "urls": [
-            "proxy://do=live&type=txt&ext=aHR0cHM6Ly9hZ2l0LmFpL2d1b3Q1NC95Z2JoL3Jhdy9icmFuY2gvbWFzdGVyL3pCL3Byby50eHQ="
+            "proxy://do=live&type=txt&ext=aHR0cHM6Ly9jb2RlYmVyZy5vcmcveWdiaDg4ODgvQkgvcmF3L2JyYW5jaC9tYWluL1pCL1pCLnR4dA=="
           ]
         }
       ]
@@ -85,7 +94,7 @@
     {
       "name": "666",
       "type": 1,
-      "url": "http://27.124.4.42:4567/jhjson/ceshi.php?url="
+      "url": "http://jx.fuqizhishi.com:63/接口地址www.肥猫.love/肥猫专用.php?url="
     },
     {
       "name": "777",
@@ -294,12 +303,60 @@
     {
       "name": "解析8",
       "type": 1,
-      "url": "https://www.nxflv.com/?url="
+      "url": "https://www.nxflv.com/?url=",
+      "header": {
+        "User-Agent": "Mozilla/5.0"
+      }
     },
     {
       "name": "解析9",
       "type": 1,
-      "url": "http://3.37.195.161:54371/parse/api/无名.js?url="
+      "url": "http://3.37.195.161:54371/parse/api/无名.js?url=",
+      "header": {
+        "User-Agent": "Mozilla/5.0"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "name": "量子",
+      "hosts": [
+        "vip.lz",
+        "hd.lz"
+      ],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.433333,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+        "#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"
+      ]
+    },
+    {
+      "name": "非凡",
+      "hosts": [
+        "vip.ffzy",
+        "hd.ffzy"
+      ],
+      "regex": [
+        "#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY",
+        "#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+"
+      ]
+    },
+    {
+      "name": "火山",
+      "hosts": [
+        "huoshan.com"
+      ],
+      "regex": [
+        "item_id="
+      ]
+    },
+    {
+      "name": "抖音",
+      "hosts": [
+        "douyin.com"
+      ],
+      "regex": [
+        "is_play_url="
+      ]
     }
   ],
   "flags": [
@@ -343,6 +400,5 @@
     "vip.ffzyad.com",
     "https://lf1-cdn-tos.bytegoofy.com/obj/tos-cn-i-dy/455ccf9e8ae744378118e4bd289288dd"
   ],
-  "wallpaper": "https://picsum.photos/1080/",
-  "spider": "./jar/0606.jar;md5;3A017244A8B8691E10152BBCA9C4DE6F"
+  "wallpaper":"https://picsum.photos/1080/","warningText":"月光宝盒完全免费，切勿付费购买。"
 }
