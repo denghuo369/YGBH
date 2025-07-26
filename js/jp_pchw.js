@@ -41,52 +41,8 @@ var rule = {
         }
     }],
     lazy: '',
-    推荐: `js:
-        var d = [];
-        let html = request(input);
-        let items = html.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+([^*]+)/g);
-        if (items) {
-            items.forEach(function(item) {
-                let match = item.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+(.+)/);
-                if (match) {
-                    let score = match[1];
-                    let quality = match[2];
-                    let title = match[3];
-                    let actors = match[4];
-                    d.push({
-                        title: title,
-                        img: '',
-                        desc: score + ' ' + quality + ' ' + actors,
-                        url: title
-                    });
-                }
-            });
-        }
-        setResult(d);
-    `,
-    一级: `js:
-        var d = [];
-        let html = request(input);
-        let items = html.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+([^*]+)/g);
-        if (items) {
-            items.forEach(function(item) {
-                let match = item.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+(.+)/);
-                if (match) {
-                    let score = match[1];
-                    let quality = match[2];
-                    let title = match[3];
-                    let actors = match[4];
-                    d.push({
-                        title: title,
-                        img: '',
-                        desc: score + ' ' + quality + ' ' + actors,
-                        url: title
-                    });
-                }
-            });
-        }
-        setResult(d);
-    `,
+    推荐: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
+    一级: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
     二级: {
         title: '.page-title&&Text;.module-info-tag&&Text',
         img: '.module-item-pic&&img&&data-src',
@@ -95,27 +51,5 @@ var rule = {
         tabs: '.module-tab-item',
         lists: '.module-play-list:eq(#id) a'
     },
-    搜索: `js:
-        var d = [];
-        let html = request(input);
-        let items = html.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+([^*]+)/g);
-        if (items) {
-            items.forEach(function(item) {
-                let match = item.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+(.+)/);
-                if (match) {
-                    let score = match[1];
-                    let quality = match[2];
-                    let title = match[3];
-                    let actors = match[4];
-                    d.push({
-                        title: title,
-                        img: '',
-                        desc: score + ' ' + quality + ' ' + actors,
-                        url: title
-                    });
-                }
-            });
-        }
-        setResult(d);
-    `
+    搜索: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick'
 }; 
