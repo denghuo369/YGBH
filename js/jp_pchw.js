@@ -41,8 +41,52 @@ var rule = {
         }
     }],
     lazy: '',
-    推荐: '.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    一级: '.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    推荐: `js:
+        var d = [];
+        let html = request(input);
+        let items = html.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+([^*]+)/g);
+        if (items) {
+            items.forEach(function(item) {
+                let match = item.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+(.+)/);
+                if (match) {
+                    let score = match[1];
+                    let quality = match[2];
+                    let title = match[3];
+                    let actors = match[4];
+                    d.push({
+                        title: title,
+                        img: '',
+                        desc: score + ' ' + quality + ' ' + actors,
+                        url: title
+                    });
+                }
+            });
+        }
+        setResult(d);
+    `,
+    一级: `js:
+        var d = [];
+        let html = request(input);
+        let items = html.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+([^*]+)/g);
+        if (items) {
+            items.forEach(function(item) {
+                let match = item.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+(.+)/);
+                if (match) {
+                    let score = match[1];
+                    let quality = match[2];
+                    let title = match[3];
+                    let actors = match[4];
+                    d.push({
+                        title: title,
+                        img: '',
+                        desc: score + ' ' + quality + ' ' + actors,
+                        url: title
+                    });
+                }
+            });
+        }
+        setResult(d);
+    `,
     二级: {
         title: '.page-title&&Text;.module-info-tag&&Text',
         img: '.module-item-pic&&img&&data-src',
@@ -51,5 +95,27 @@ var rule = {
         tabs: '.module-tab-item',
         lists: '.module-play-list:eq(#id) a'
     },
-    搜索: '.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href'
+    搜索: `js:
+        var d = [];
+        let html = request(input);
+        let items = html.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+([^*]+)/g);
+        if (items) {
+            items.forEach(function(item) {
+                let match = item.match(/\\*\\*([^*]+)\\*\\*([^*]+)\\s+([^*]+)\\s+(.+)/);
+                if (match) {
+                    let score = match[1];
+                    let quality = match[2];
+                    let title = match[3];
+                    let actors = match[4];
+                    d.push({
+                        title: title,
+                        img: '',
+                        desc: score + ' ' + quality + ' ' + actors,
+                        url: title
+                    });
+                }
+            });
+        }
+        setResult(d);
+    `
 }; 
