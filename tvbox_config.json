@@ -1,0 +1,52 @@
+{
+  "spider": "https://pchwjiasu.abkc4.com/",
+  "sites": [
+    {
+      "key": "pchwjiasu",
+      "name": "PC加速影视",
+      "type": 0,
+      "api": "https://pchwjiasu.abkc4.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": {
+        "categories": [
+          {
+            "type_id": "1",
+            "type_name": "电影"
+          },
+          {
+            "type_id": "2", 
+            "type_name": "电视剧"
+          },
+          {
+            "type_id": "3",
+            "type_name": "动漫"
+          },
+          {
+            "type_id": "4",
+            "type_name": "综艺"
+          },
+          {
+            "type_id": "5",
+            "type_name": "纪录片"
+          }
+        ]
+      }
+    }
+  ],
+  "lives": [],
+  "flags": [
+    "pchwjiasu"
+  ],
+  "ijk": [],
+  "ads": [],
+  "parse": [],
+  "urls": [],
+  "doh": [],
+  "aliases": {
+    "pchwjiasu": "PC加速影视"
+  },
+  "lazy": false,
+  "wallpaper": ""
+} 
