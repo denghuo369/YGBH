@@ -44,12 +44,12 @@ var rule = {
     推荐: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
     一级: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
     二级: {
-        title: '.page-title&&Text;.module-info-tag&&Text',
-        img: '.module-item-pic&&img&&data-src',
-        desc: '.module-info-item:eq(0)&&Text;.module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text',
-        content: '.module-info-introduction&&Text',
-        tabs: '.module-tab-item',
-        lists: '.module-play-list:eq(#id) a'
+        title: '.m-title&&Text',
+        img: '.m-i-pic img&&data-original',
+        desc: '.m-tag&&Text;.m-tags li:eq(0)&&Text;.m-tags li:eq(1)&&Text;.m-tags li:eq(2)&&Text;.m-tags li:eq(3)&&Text;.m-p-info strong&&Text',
+        content: '.md-info&&Text',
+        tabs: '',
+        lists: 'js:let d=[];let html=request(input);let m=html.match(/g_PlayUrl='([\s\S]*?)';/);if(m){let arr=m[1].split('#');for(let i=0;i<arr.length;i++){let kv=arr[i].split('$');if(kv.length==2){d.push([kv[0],kv[1]]);}}}setResult([d]);'
     },
-    搜索: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick'
+    搜索: '.search-main li.s-m-item;.s-t-title h4 a&&Text;a.pic img&&data-original;a.pic span.mark&&Text;a.pic&&onclick'
 }; 
