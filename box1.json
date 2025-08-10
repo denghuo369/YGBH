@@ -20,7 +20,7 @@
   },
     {
       "key": "drpy_js_荐片加速",
-      "name": "🧲荐片加速",
+      "name": "🧲荐片1",
       "type": 3,
       "api": "./lib/drpy2.min.js",
       "ext": "./js/jp_pchw.js"
