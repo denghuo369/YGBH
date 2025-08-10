@@ -3,7 +3,7 @@ var rule = {
     host: 'https://pchwjiasu.abkc4.com/',
     homeUrl: '/', // 首页
     url: '/?s=vod-type-id-fyclass-wd--year-0-area--tag--order-hits_week-p-fypage.html', // 分类列表接口 - 修复分页
-    class_name: '电影1&电视剧&动漫&综艺&纪录片',
+    class_name: '电影2&电视剧&动漫&综艺&纪录片',
     class_url: '1&2&3&4&22',
     detailUrl: '/?s=vod-read-id-fyid.html', // 详情接口
     searchUrl: '/?s=vod-search&wd=**', // 搜索接口
@@ -91,8 +91,8 @@ var rule = {
         }
     }],
     lazy: '',
-    推荐: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
-    一级: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
+    推荐: "js:let html=request(input);let d=[];let list=html.match(/<li[^>]*>[\s\S]*?<\/li>/g);if(list){for(let i=0;i<list.length;i++){let item=list[i];let title=item.match(/title=\"([^\"]+)\"/);let img=item.match(/data-original=\"([^\"]+)\"/);let mark=item.match(/<span[^>]*class=\"[^\"]*mark[^\"]*\"[^>]*>([^<]+)<\/span>/);let onclick=item.match(/TT\\.Play\\.OpenTab\\('([^']+)'[^)]*\)/);if(title && onclick){d.push([title[1],img?img[1]:'',mark?mark[1]:'',onclick[1]]);}}}setResult(d);",
+    一级: "js:let html=request(input);let d=[];let list=html.match(/<li[^>]*>[\s\S]*?<\/li>/g);if(list){for(let i=0;i<list.length;i++){let item=list[i];let title=item.match(/title=\"([^\"]+)\"/);title=title?title[1]:'';let img=item.match(/data-original=\"([^\"]+)\"/);img=img?img[1]:'';let mark=item.match(/<span[^>]*class=\"[^\"]*mark[^\"]*\"[^>]*>([^<]+)<\/span>/);mark=mark?mark[1]:'';let onclick=item.match(/TT\\.Play\\.OpenTab\\('([^']+)'[^)]*\)/);if(onclick){d.push([title,img,mark,onclick[1]]);}}setResult(d);}",
     二级: {
         title: '.m-title&&Text',
         img: '.m-i-pic img&&data-original',
