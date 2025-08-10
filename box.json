@@ -6,7 +6,7 @@
       "name": "🧲荐片",
       "type": 3,
       "api": "./lib/drpy2.min.js",
-      "ext": "./js/jp.js"
+      "ext": "./js/jp_pchw.js"
     },
     {
       "key": "js豆瓣1",
