@@ -13,7 +13,7 @@ var rule = {
     class_parse: '.navbar-nav li;a&&Text;a&&href;.*/vod-type-id-(\\d+)-order-hits_week.html', // 动态获取分类
     filter: {
         '类型': {
-            '电影1': '1',
+            '电影': '1',
             '电视剧': '2', 
             '动漫': '3',
             '综艺': '4',
