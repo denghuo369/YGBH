@@ -91,8 +91,8 @@ var rule = {
         }
     }],
     lazy: '',
-    推荐: "js:let html=request(input);if(typeof html!=='string')html=String(html);let d=[];let list=html.match(/<li[^>]*>[\\s\\S]*?<\\/li>/g);if(list){for(let i=0;i<list.length;i++){let item=list[i];let title=item.match(/title=\"([^\"]+)\"/);let img=item.match(/data-original=\"([^\"]+)\"/);let mark=item.match(/<span[^>]*class=\"[^\"]*mark[^\"]*\"[^>]*>([^<]+)<\\/span>/);let onclick=item.match(/TT\\.Play\\.OpenTab\\('([^']+)'[^)]*\\)/);if(title && onclick){d.push([title[1],img?img[1]:'',mark?mark[1]:'',onclick[1]]);}}}setResult(d);",
-    一级: "js:let html=request(input);if(typeof html!=='string')html=String(html);let d=[];let list=html.match(/<li[^>]*>[\\s\\S]*?<\\/li>/g);if(list){for(let i=0;i<list.length;i++){let item=list[i];let title=item.match(/title=\"([^\"]+)\"/);title=title?title[1]:'';let img=item.match(/data-original=\"([^\"]+)\"/);img=img?img[1]:'';let mark=item.match(/<span[^>]*class=\"[^\"]*mark[^\"]*\"[^>]*>([^<]+)<\\/span>/);mark=mark?mark[1]:'';let onclick=item.match(/TT\\.Play\\.OpenTab\\('([^']+)'[^)]*\\)/);if(onclick){d.push([title,img,mark,onclick[1]]);}}setResult(d);}",
+    推荐: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
+    一级: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
     二级: {
         title: '.m-title&&Text',
         img: '.m-i-pic img&&data-original',
