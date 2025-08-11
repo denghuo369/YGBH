@@ -3,7 +3,7 @@ var rule = {
     host: 'https://pchwjiasu.abkc4.com/',
     homeUrl: '/', // 首页
     url: '/?s=vod-type-id-fyclass-wd--year-0-area--tag--order-hits_week-p-fypage.html', // 分类列表接口 - 修复分页
-    class_name: '电影&电视剧&动漫&综艺&纪录片',
+    class_name: '电影1&电视剧&动漫&综艺&纪录片',
     class_url: '1&2&3&4&22',
     detailUrl: '/?s=vod-read-id-fyid.html', // 详情接口
     searchUrl: '/?s=vod-search&wd=**', // 搜索接口
