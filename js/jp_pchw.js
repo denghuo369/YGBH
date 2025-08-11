@@ -3,7 +3,7 @@ var rule = {
     host: 'https://pchwjiasu.abkc4.com/',
     homeUrl: '/', // 首页
     url: '/?s=vod-type-id-fyclass-wd--year-0-area--tag--order-hits_week-p-fypage.html', // 分类列表接口 - 修复分页
-    class_name: '电影1&电视剧&动漫&综艺&纪录片',
+    class_name: '电影&电视剧&动漫&综艺&纪录片',
     class_url: '1&2&3&4&22',
     detailUrl: '/?s=vod-read-id-fyid.html', // 详情接口
     searchUrl: '/?s=vod-search&wd=**', // 搜索接口
@@ -91,15 +91,15 @@ var rule = {
         }
     }],
     lazy: '',
-    推荐: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
-    一级: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
+    推荐: "js:let html=request(input);if(typeof html!=='string')html=String(html);let d=[];let list=html.match(/<li[^>]*>[\\s\\S]*?<\\/li>/g);if(list){for(let i=0;i<list.length;i++){let item=list[i];let title=item.match(/title=\"([^\"]+)\"/);let img=item.match(/data-original=\"([^\"]+)\"/);let mark=item.match(/<span[^>]*class=\"[^\"]*mark[^\"]*\"[^>]*>([^<]+)<\\/span>/);let onclick=item.match(/TT\\.Play\\.OpenTab\\('([^']+)'[^)]*\\)/);if(title && onclick){d.push([title[1],img?img[1]:'',mark?mark[1]:'',onclick[1]]);}}}setResult(d);",
+    一级: "js:let html=request(input);if(typeof html!=='string')html=String(html);let d=[];let list=html.match(/<li[^>]*>[\\s\\S]*?<\\/li>/g);if(list){for(let i=0;i<list.length;i++){let item=list[i];let title=item.match(/title=\"([^\"]+)\"/);title=title?title[1]:'';let img=item.match(/data-original=\"([^\"]+)\"/);img=img?img[1]:'';let mark=item.match(/<span[^>]*class=\"[^\"]*mark[^\"]*\"[^>]*>([^<]+)<\\/span>/);mark=mark?mark[1]:'';let onclick=item.match(/TT\\.Play\\.OpenTab\\('([^']+)'[^)]*\\)/);if(onclick){d.push([title,img,mark,onclick[1]]);}}setResult(d);}",
     二级: {
         title: '.m-title&&Text',
         img: '.m-i-pic img&&data-original',
-        desc: "js:let html=request(input);let desc='';let title=html.match(/<div[^>]*class=\"[^\"]*m-title[^\"]*\"[^>]*>([^<]+)/);if(title)desc+=title[1].replace(/<[^>]*>/g,'')+'\\n';let actor=html.match(/主演：[\\s]*<span[^>]*>([\\s\\S]*?)<\\/span>/);if(actor)desc+='主演：'+actor[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ')+'\\n';let director=html.match(/导演：[\\s]*<span[^>]*>([\\s\\S]*?)<\\/span>/);if(director)desc+='导演：'+director[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ')+'\\n';let type=html.match(/类型：[\\s]*<span[^>]*>([\\s\\S]*?)<\\/span>/);if(type)desc+='类型：'+type[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ')+'\\n';let year=html.match(/上映：[\\s]*<span[^>]*>([\\s\\S]*?)<\\/span>/);if(year)desc+='上映：'+year[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ')+'\\n';let area=html.match(/地区：[\\s]*<span[^>]*>([\\s\\S]*?)<\\/span>/);if(area)desc+='地区：'+area[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ')+'\\n';let update=html.match(/更新：([\\s\\S]*?)<\\/span>/);if(update)desc+='更新：'+update[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ');setResult(desc);",
+        desc: "js:let html=request(input);if(typeof html!=='string')html=String(html);let desc='';let title=html.match(/<div[^>]*class=\"[^\"]*m-title[^\"]*\"[^>]*>([^<]+)/);if(title)desc+=title[1].replace(/<[^>]*>/g,'')+'\\n';let actor=html.match(/主演：<\\/span>([\\s\\S]*?)<\\/div>/);if(actor)desc+='主演：'+actor[1].replace(/<[^>]*>/g,'').replace(/[\\s]+/g,' ')+'\\n';let director=html.match(/导演：<\\/span><a[^>]*>([^<]+)<\\/a>/);if(director)desc+='导演：'+director[1]+'\\n';let type=html.match(/类型：<\\/span><a[^>]*>([^<]+)<\\/a>/);if(type)desc+='类型：'+type[1]+'\\n';let year=html.match(/上映：<\\/span>([^<]+)/);if(year)desc+='上映：'+year[1]+'\\n';let area=html.match(/地区：<\\/span>([^<]+)/);if(area)desc+='地区：'+area[1]+'\\n';let update=html.match(/更新：([^<]+)/);if(update)desc+='更新：'+update[1];setResult(desc);",
         content: '.md-info&&Text',
         tabs: '道长在线',
-        lists: "js:let d=[];let html=request(input);let playUrls=[];let playNames=[];let scriptMatch=html.match(/<script[^>]*>g_PlayUrl='([\\s\\S]*?)'[\\s\\S]*?<\\/script>/);if(scriptMatch && scriptMatch[1] && scriptMatch[1].length>0){let arr=scriptMatch[1].split('#');for(let i=0;i<arr.length;i++){let kv=arr[i].split('$');if(kv.length==2){playNames.push(kv[0]);playUrls.push(kv[1]);}}}for(let i=0;i<playUrls.length;i++){d.push(playNames[i]||'播放'+(i+1)+'$'+playUrls[i]);}if(d.length==0){d.push('暂无播放源$http://www.baidu.com')} setResult([d]);"
+        lists: "js:let d=[];let html=request(input);if(typeof html!=='string')html=String(html);let playUrls=[];let playNames=[];let scriptMatch=html.match(/<script[^>]*>g_PlayUrl='([\\s\\S]*?)'[\\s\\S]*?<\\/script>/);if(scriptMatch && scriptMatch[1] && scriptMatch[1].length>0){let arr=scriptMatch[1].split('#');for(let i=0;i<arr.length;i++){let kv=arr[i].split('$');if(kv.length==2){playNames.push(kv[0]);playUrls.push(kv[1]);}}}for(let i=0;i<playUrls.length;i++){d.push(playNames[i]||'播放'+(i+1)+'$'+playUrls[i]);}if(d.length==0){d.push('暂无播放源$http://www.baidu.com')} setResult([d]);"
     },
     搜索: '.search-main li.s-m-item;.s-t-title h4 a&&Text;a.pic img&&data-original;a.pic span.mark&&Text;a.pic&&onclick'
 }; 
