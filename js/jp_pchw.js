@@ -14,7 +14,7 @@ var rule = {
     filter: {
         '类型': {
             '电影': '1',
-            '电视剧': '2', 
+            '电视剧': '2',
             '动漫': '3',
             '综艺': '4',
             '纪录片': '22'
@@ -91,8 +91,8 @@ var rule = {
         }
     }],
     lazy: '',
-    推荐: '.h-s-list li;a&&title;img&&data-original;.mark&&Text;a&&title',
-    一级: '.list li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
+    推荐: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
+    一级: '.list-main li;a&&title;img&&data-original;.mark&&Text;a&&onclick',
     二级: {
         title: '.m-title&&Text',
         img: '.m-i-pic img&&data-original',
