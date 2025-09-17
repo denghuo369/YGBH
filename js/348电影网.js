@@ -1,6 +1,8 @@
 var rule={
 	title:'348电影网',
 	host:'https://www.348z.com',
+	class_name:'电影&电视剧&动漫&综艺&4K',
+	class_url:'1&2&3&4&37',
 	// url:'/vodshow/id/fyclass/page/fypage.html',
 	url:'/vodshow/id/fyfilter.html',
 	filterable:1,//是否启用分类筛选,
