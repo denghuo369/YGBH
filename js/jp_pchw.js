@@ -14,7 +14,7 @@ var rule = {
     filter: {
         '类型': {
             '电影': '1',
-            '电视剧': '2', 
+            '电视剧': '2',
             '动漫': '3',
             '综艺': '4',
             '纪录片': '22'
@@ -289,7 +289,7 @@ var rule = {
             let playList = '';
             if(playUrls.length > 0) {
                 playList = playUrls.map((url, index) => {
-                    return (playNames[index] || '播放' + (index + 1)) + '$' + url;
+                    return (playNames[index] || '播放' + (index + 1)) + '$tvbox-xg:' + url;
                 }).join('#');
             } else {
                 playList = '暂无播放源$http://www.baidu.com';
@@ -328,4 +328,4 @@ var rule = {
         }
     `,
     搜索: '.search-main li.s-m-item;.s-t-title h4 a&&Text;a.pic img&&data-original;a.pic span.mark&&Text;a.pic&&onclick'
-}; 
+};
