@@ -288,6 +288,8 @@ var rule = {
             let playFrom = '荐片';
             let playList = '';
             if(playUrls.length > 0) {
+                playUrls.reverse();
+                playNames.reverse();
                 playList = playUrls.map((url, index) => {
                     return (playNames[index] || '播放' + (index + 1)) + '$tvbox-xg:' + url;
                 }).join('#');
