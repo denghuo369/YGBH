@@ -93,34 +93,6 @@
       }
     },
     {
-      "name": "腾讯解析",
-      "type": 0,
-      "url": "https://xjx.ll5188.com/?url=",
-      "ext": {
-        "flag": [
-          "qq",
-          "腾讯",
-          "qiyi",
-          "iqiyi",
-          "爱奇艺",
-          "奇艺",
-          "youku",
-          "优酷",
-          "mgtv",
-          "芒果",
-          "letv",
-          "乐视",
-          "pptv",
-          "PPTV",
-          "sohu",
-          "bilibili",
-          "bilibili1",
-          "哔哩哔哩",
-          "哔哩"
-        ]
-      }
-    },
-    {
       "name": "解析3",
       "type": 0,
       "url": "https://jx.nnxv.cn/tv.php?url=",
@@ -149,93 +121,14 @@
       }
     },
     {
-      "name": "解析4",
+      "name": "ZM1907",
       "type": 0,
-      "url": "https://z1.m1907.top/?jx=",
-      "ext": {
-        "flag": [
-          "qq",
-          "腾讯",
-          "qiyi",
-          "iqiyi",
-          "爱奇艺",
-          "奇艺",
-          "youku",
-          "优酷",
-          "mgtv",
-          "芒果",
-          "letv",
-          "乐视",
-          "pptv",
-          "PPTV",
-          "sohu",
-          "bilibili",
-          "bilibili1",
-          "哔哩哔哩",
-          "哔哩"
-        ]
-      }
-    },
-    {
-      "name": "解析5",
-      "type": 0,
-      "url": "https://jx.789jiexi.com/?url=",
-      "ext": {
-        "flag": [
-          "qq",
-          "腾讯",
-          "qiyi",
-          "iqiyi",
-          "爱奇艺",
-          "奇艺",
-          "youku",
-          "优酷",
-          "mgtv",
-          "芒果",
-          "letv",
-          "乐视",
-          "pptv",
-          "PPTV",
-          "sohu",
-          "bilibili",
-          "bilibili1",
-          "哔哩哔哩",
-          "哔哩"
-        ]
-      }
+      "url": "https://z1.m1907.top/?jx="
     },
     {
       "name": "解析6",
       "type": 0,
       "url": "https://jx.playerjy.com/?url=",
-      "ext": {
-        "flag": [
-          "qq",
-          "腾讯",
-          "qiyi",
-          "iqiyi",
-          "爱奇艺",
-          "奇艺",
-          "youku",
-          "优酷",
-          "mgtv",
-          "芒果",
-          "letv",
-          "乐视",
-          "pptv",
-          "PPTV",
-          "sohu",
-          "bilibili",
-          "bilibili1",
-          "哔哩哔哩",
-          "哔哩"
-        ]
-      }
-    },
-    {
-      "name": "解析7",
-      "type": 0,
-      "url": "https://jx.xmflv.cc/?url=",
       "ext": {
         "flag": [
           "qq",
