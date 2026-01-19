@@ -14,6 +14,14 @@
       "type": 3,
       "api": "./lib/drpy2.min.js",
       "ext": "./js/360影视.js"
+    }, {
+      "key": "custom_video_search",
+      "name": "🔍 自定义搜索", "type": 3,
+      "api": "./lib/drpy2.min.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": "./js/custom_search.js"
     }
   ],
   "lives": [
